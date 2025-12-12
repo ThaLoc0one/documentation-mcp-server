@@ -1,80 +1,80 @@
 # 📚 Documentation MCP Server
 
-Ein Model Context Protocol (MCP) Server zum Generieren professioneller Dokumentationen mit Unterstützung für mehrere Frameworks.
+A Model Context Protocol (MCP) Server for generating professional documentation with support for multiple frameworks.
 
 ## ✨ Features
 
-- 🔍 **Deep Code Analysis** - AST-basierte Multi-Language Analysis
+- 🔍 **Deep Code Analysis** - AST-based Multi-Language Analysis
   - **TypeScript/JavaScript**: TypeScript Compiler API
   - **Python**: Native Python AST module
   - **Go**: Go parser & AST
-  - **PHP**: Regex-basierte Analyse + PHP 8+ Features
-  - Extrahiert Klassen, Funktionen, Interfaces, Methoden, Properties
+  - **PHP**: Regex-based analysis + PHP 8+ Features
+  - Extracts classes, functions, interfaces, methods, properties
   - **PHP 8+**: Enums, Traits, Attributes
-  - Erfasst JSDoc/Docstrings/Go Doc/PHPDoc und berechnet Dokumentations-Coverage
-  - Analysiert Imports/Exports und Module-Dependencies
-- 🌍 **Multi-Language Projects** - Automatische Erkennung und parallele Analyse mehrerer Sprachen
-- 📊 **Projekt-Analyse** - Automatische Code-Analyse für TypeScript, JavaScript, Python, Go, PHP
-- 🏗️ **Struktur-Generierung** - Erstellt komplette Dokumentations-Gerüste
-- ✍️ **Seiten-Editor** - Erstellt und bearbeitet einzelne Dokumentationsseiten
-- 📖 **API-Dokumentation** - Generiert API-Docs aus Code-Kommentaren
-- 🌐 **Static Site Builder** - Baut statische Websites für Hosting
-- 📄 **PDF-Export** - Konvertiert Dokumentation zu PDF
-- 👀 **Live-Preview** - Lokaler Entwicklungsserver
+  - Captures JSDoc/Docstrings/Go Doc/PHPDoc and calculates documentation coverage
+  - Analyzes imports/exports and module dependencies
+- 🌍 **Multi-Language Projects** - Automatic detection and parallel analysis of multiple languages
+- 📊 **Project Analysis** - Automatic code analysis for TypeScript, JavaScript, Python, Go, PHP
+- 🏗️ **Structure Generation** - Creates complete documentation scaffolds
+- ✍️ **Page Editor** - Creates and edits individual documentation pages
+- 📖 **API Documentation** - Generates API docs from code comments
+- 🌐 **Static Site Builder** - Builds static websites for hosting
+- 📄 **PDF Export** - Converts documentation to PDF
+- 👀 **Live Preview** - Local development server
 
-## 🛠️ Unterstützte Frameworks
+## 🛠️ Supported Frameworks
 
-- **Docusaurus** (React-basiert, modern, verschiedene Templates)
-- **MkDocs** (Python-basiert, Markdown-fokussiert, einfach)
-- **Sphinx** (Python, sehr mächtig, für komplexe Projekte)
+- **Docusaurus** (React-based, modern, various templates)
+- **MkDocs** (Python-based, Markdown-focused, simple)
+- **Sphinx** (Python, very powerful, for complex projects)
 
 ## 🚀 Quick Start
 
-1. Verzeichnisse erstellen:
+1. Install globally:
 
-   ```cmd
-   mkdir src
-   mkdir src\tools
+   ```bash
+   npm install -g documentation-mcp-server
    ```
 
-2. Dependencies installieren:
+2. Configure in Claude Desktop (see SETUP.md):
 
-   ```cmd
-   npm install
+   ```json
+   {
+     "mcpServers": {
+       "docs": {
+         "command": "npx",
+         "args": ["-y", "documentation-mcp-server"]
+       }
+     }
+   }
    ```
 
-3. Build:
-
-   ```cmd
-   npm run build
-   ```
-
-4. MCP Server in Claude Desktop konfigurieren (siehe SETUP.md)
+3. Start using the documentation tools in Claude!
 
 ## 📦 Tools
 
 ### `docs_analyze_project`
 
-Analysiert Projekt-Struktur und führt Deep Code Analysis durch.
+Analyzes project structure and performs deep code analysis.
 
-**Parameter:**
+**Parameters:**
 
-- `projectPath` (string, required) - Pfad zum Projekt
-- `language` (enum, optional) - Programmiersprache (typescript, javascript, python, go, rust, java, csharp)
-- `deep` (boolean, optional, default: true) - Aktiviert Deep Code Analysis
+- `projectPath` (string, required) - Path to project
+- `language` (enum, optional) - Programming language (typescript, javascript, python, go, rust, java, csharp)
+- `deep` (boolean, optional, default: true) - Enables deep code analysis
 
 **Deep Analysis Features:**
 
-- 📦 Extrahiert Classes/Structs, Interfaces, Functions, Enums, Type Aliases
-- 🔍 Erfasst Methods, Properties, Constructors mit vollständigen Details
-- 📝 Analysiert JSDoc/Docstrings/Go Doc und berechnet Documentation Coverage
-- 🔗 Trackt Imports/Exports und Module Dependencies
-- 📊 Generiert Zusammenfassungs-Statistiken
+- 📦 Extracts Classes/Structs, Interfaces, Functions, Enums, Type Aliases
+- 🔍 Captures Methods, Properties, Constructors with complete details
+- 📝 Analyzes JSDoc/Docstrings/Go Doc and calculates documentation coverage
+- 🔗 Tracks Imports/Exports and Module Dependencies
+- 📊 Generates summary statistics
 - 🎯 **Multi-Language Support:**
   - ✅ TypeScript/JavaScript (TypeScript Compiler API)
   - ✅ Python (Native Python AST)
   - ✅ Go (go/parser & go/ast)
-  - ✅ PHP v2 (nikic/php-parser AST) - **Neu! 100% genau**
+  - ✅ PHP v2 (nikic/php-parser AST) - **New! 100% accurate**
     - Namespaces & Use-Statements
     - Union/Intersection/Nullable Types
     - Enums, Traits, Attributes (PHP 8+)
@@ -101,10 +101,10 @@ Analysiert Projekt-Struktur und führt Deep Code Analysis durch.
       - Middleware → Security Schemes
       - JSON & YAML format support
   - ✅ PHP v1 (Regex-based) - Fallback
-  - 🌍 Automatische Multi-Language-Erkennung
-  - 🔜 Rust, Java, C# (in Planung)
+  - 🌍 Automatic Multi-Language Detection
+  - 🔜 Rust, Java, C# (planned)
 
-**Beispiel-Rückgabe:**
+**Example Response:**
 
 ```json
 {
@@ -122,126 +122,126 @@ Analysiert Projekt-Struktur und führt Deep Code Analysis durch.
 
 ### `docs_generate_structure`
 
-Generiert Dokumentations-Gerüst.
+Generates documentation scaffold.
 
-**Parameter:**
+**Parameters:**
 
-- `projectPath` (string, required) - Pfad zum Projekt
+- `projectPath` (string, required) - Path to project
 - `framework` (enum, required) - docusaurus | mkdocs | sphinx
-- `template` (string, optional) - Template-Name
-- `outputPath` (string, optional) - Ausgabepfad (default: ./docs)
+- `template` (string, optional) - Template name
+- `outputPath` (string, optional) - Output path (default: ./docs)
 
 ### `docs_create_page`
 
-Erstellt oder bearbeitet Dokumentationsseite.
+Creates or edits documentation page.
 
-**Parameter:**
+**Parameters:**
 
-- `docsPath` (string, required) - Pfad zur Doku
-- `pagePath` (string, required) - Relativer Pfad zur Seite
-- `title` (string, required) - Seitentitel
-- `content` (string, required) - Markdown-Inhalt
+- `docsPath` (string, required) - Path to docs
+- `pagePath` (string, required) - Relative path to page
+- `title` (string, required) - Page title
+- `content` (string, required) - Markdown content
 
 ### `docs_generate_api`
 
-Generiert API-Dokumentation aus Code.
+Generates API documentation from code.
 
-**Parameter:**
+**Parameters:**
 
-- `projectPath` (string, required) - Pfad zum Quellcode
-- `outputPath` (string, required) - Ausgabepfad
-- `language` (enum, required) - Programmiersprache
+- `projectPath` (string, required) - Path to source code
+- `outputPath` (string, required) - Output path
+- `language` (enum, required) - Programming language
 
 ### `docs_build_static`
 
-Baut statische Website.
+Builds static website.
 
-**Parameter:**
+**Parameters:**
 
-- `docsPath` (string, required) - Pfad zur Doku
+- `docsPath` (string, required) - Path to docs
 - `framework` (enum, required) - Framework
-- `outputPath` (string, optional) - Ausgabepfad (default: ./build)
+- `outputPath` (string, optional) - Output path (default: ./build)
 
 ### `docs_export_pdf`
 
-Exportiert Dokumentation als PDF.
+Exports documentation as PDF.
 
-**Parameter:**
+**Parameters:**
 
-- `docsPath` (string, required) - Pfad zur Doku
-- `outputPath` (string, required) - PDF-Ausgabepfad
-- `includePages` (array, optional) - Spezifische Seiten
+- `docsPath` (string, required) - Path to docs
+- `outputPath` (string, required) - PDF output path
+- `includePages` (array, optional) - Specific pages
 
 ### `docs_preview`
 
-Startet lokalen Dev-Server.
+Starts local dev server.
 
-**Parameter:**
+**Parameters:**
 
-- `docsPath` (string, required) - Pfad zur Doku
+- `docsPath` (string, required) - Path to docs
 - `framework` (enum, required) - Framework
 - `port` (number, optional) - Port (default: 3000/8000)
 
 ### `docs_generate_openapi`
 
-Generiert OpenAPI 3.0 Spezifikation aus PHP-Code.
+Generates OpenAPI 3.0 specification from PHP code.
 
-**Parameter:**
+**Parameters:**
 
-- `projectPath` (string, required) - PHP-Projekt Pfad
-- `outputPath` (string, optional) - Ausgabepfad (default: ./openapi.json)
+- `projectPath` (string, required) - PHP project path
+- `outputPath` (string, optional) - Output path (default: ./openapi.json)
 - `format` (enum, optional) - json | yaml (default: json)
-- `title` (string, optional) - API-Titel
-- `version` (string, optional) - API-Version
-- `serverUrl` (string, optional) - API Server URL
+- `title` (string, optional) - API title
+- `version` (string, optional) - API version
+- `serverUrl` (string, optional) - API server URL
 
-### `docs_generate_sales_docs` 🎯 **NEU!**
+### `docs_generate_sales_docs` 🎯 **NEW!**
 
-Generiert professionelle, verkaufsfertige Dokumentation für CodeCanyon, ThemeForest, etc.
+Generates professional, sales-ready documentation for CodeCanyon, ThemeForest, etc.
 
-**Parameter:**
+**Parameters:**
 
-- `projectPath` (string, required) - PHP-Projekt Pfad
-- `outputDir` (string, optional) - Ausgabe-Verzeichnis (default: ./sales-docs)
-- `productName` (string, required) - Produktname
+- `projectPath` (string, required) - PHP project path
+- `outputDir` (string, optional) - Output directory (default: ./sales-docs)
+- `productName` (string, required) - Product name
 - `productVersion` (string, optional) - Version (default: 1.0.0)
-- `author` (string, required) - Autor/Firma
-- `description` (string, required) - Produktbeschreibung
-- `price` (string, optional) - Preis (z.B., "$49")
-- `demoUrl` (string, optional) - Live-Demo URL
-- `supportEmail` (string, optional) - Support E-Mail
-- `features` (array, optional) - Liste der Key Features
+- `author` (string, required) - Author/Company
+- `description` (string, required) - Product description
+- `price` (string, optional) - Price (e.g., "$49")
+- `demoUrl` (string, optional) - Live demo URL
+- `supportEmail` (string, optional) - Support email
+- `features` (array, optional) - List of key features
 
-**Generierte Dateien:**
+**Generated Files:**
 
-1. **README.md** (2.5 KB) - Produkt-Übersicht mit Features, Statistiken, Requirements
-2. **INSTALLATION.md** (3.2 KB) - Schritt-für-Schritt Setup-Guide
-3. **API_REFERENCE.md** (24.2 KB) - Komplette API-Dokumentation
-4. **CONFIGURATION.md** (2.1 KB) - Umgebungsvariablen, Security
-5. **EXAMPLES.md** (4.0 KB) - Code-Beispiele (JS, PHP, Python)
-6. **FAQ.md** (2.2 KB) - Häufig gestellte Fragen
-7. **CHANGELOG.md** (0.9 KB) - Versionshistorie
-8. **COMPLETE_DOCUMENTATION.md** (39.0 KB) - All-in-One für PDF
+1. **README.md** (2.5 KB) - Product overview with features, statistics, requirements
+2. **INSTALLATION.md** (3.2 KB) - Step-by-step setup guide
+3. **API_REFERENCE.md** (24.2 KB) - Complete API documentation
+4. **CONFIGURATION.md** (2.1 KB) - Environment variables, security
+5. **EXAMPLES.md** (4.0 KB) - Code examples (JS, PHP, Python)
+6. **FAQ.md** (2.2 KB) - Frequently asked questions
+7. **CHANGELOG.md** (0.9 KB) - Version history
+8. **COMPLETE_DOCUMENTATION.md** (39.0 KB) - All-in-one for PDF
 
-**Gesamt:** ~78 KB professionelle Dokumentation!
+**Total:** ~78 KB professional documentation!
 
-## 🏗️ Architektur
+## 🏗️ Architecture
 
 ```
 src/
-├── index.ts                    # MCP Server Hauptdatei
-├── core/                       # Kern-Module für Deep Analysis
-│   ├── types.ts               # Type-Definitionen für alle Sprachen
-│   └── analyzer.ts            # Abstract Base Class & Factory
-├── analyzers/                  # Sprachspezifische Analyzer
+├── index.ts                    # MCP Server main file
+├── core/                       # Core modules for deep analysis
+│   ├── types.ts               # Type definitions for all languages
+│   └── analyzer.ts            # Abstract base class & factory
+├── analyzers/                  # Language-specific analyzers
 │   ├── typescript.ts          # TypeScript/JavaScript (TS Compiler API)
-│   ├── python.ts              # Python Wrapper (subprocess)
-│   ├── go.ts                  # Go Wrapper (subprocess)
-│   └── helpers/               # Native Language Parsers
-│       ├── python_analyzer.py # Python AST Parser
-│       └── go_analyzer.go     # Go AST Parser
-└── tools/                      # MCP Tool-Implementierungen
-    ├── analyzeProject.ts      # Deep Analysis Integration
+│   ├── python.ts              # Python wrapper (subprocess)
+│   ├── go.ts                  # Go wrapper (subprocess)
+│   └── helpers/               # Native language parsers
+│       ├── python_analyzer.py # Python AST parser
+│       └── go_analyzer.go     # Go AST parser
+└── tools/                      # MCP tool implementations
+    ├── analyzeProject.ts      # Deep analysis integration
     ├── generateStructure.ts
     ├── createPage.ts
     ├── generateApi.ts
@@ -252,17 +252,17 @@ src/
 
 ### 🔬 Deep Analysis Pipeline
 
-1. **File Scanning** - Durchsucht Projekt-Verzeichnis
-2. **Language Detection** - Erkennt dominante Programmiersprache
-3. **Analyzer Selection** - Wählt passenden AST-Parser (Factory Pattern)
-4. **AST Parsing** - Parst Code-Dateien mit sprachspezifischem Parser
+1. **File Scanning** - Scans project directory
+2. **Language Detection** - Detects dominant programming language
+3. **Analyzer Selection** - Selects appropriate AST parser (Factory Pattern)
+4. **AST Parsing** - Parses code files with language-specific parser
    - TypeScript: TS Compiler API (in-process)
    - Python: Python AST module (subprocess)
    - Go: go/parser & go/ast (subprocess)
-5. **Symbol Extraction** - Extrahiert alle Code-Symbole (Classes, Functions, etc.)
-6. **Documentation Analysis** - Erfasst Dokumentations-Kommentare
-7. **Summary Generation** - Berechnet Statistiken und Coverage
+5. **Symbol Extraction** - Extracts all code symbols (Classes, Functions, etc.)
+6. **Documentation Analysis** - Captures documentation comments
+7. **Summary Generation** - Calculates statistics and coverage
 
-## 📝 Lizenz
+## 📝 License
 
 MIT

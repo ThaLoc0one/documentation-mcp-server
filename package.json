@@ -1,6 +1,6 @@
 {
   "name": "documentation-mcp-server",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Professional documentation generator MCP server with multi-language AST analysis, OpenAPI 3.0 generation, and sales-ready documentation for CodeCanyon/ThemeForest",
   "main": "dist/index.js",
   "type": "module",
@@ -41,12 +41,12 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/yourcompany/documentation-mcp-server.git"
+    "url": "git+https://github.com/ThaLoc0one/documentation-mcp-server.git"
   },
   "bugs": {
-    "url": "https://github.com/yourcompany/documentation-mcp-server/issues"
+    "url": "https://github.com/ThaLoc0one/documentation-mcp-server/issues"
   },
-  "homepage": "https://github.com/yourcompany/documentation-mcp-server#readme",
+  "homepage": "https://github.com/ThaLoc0one/documentation-mcp-server#readme",
   "author": "Your Name <your.email@example.com>",
   "license": "MIT",
   "dependencies": {
