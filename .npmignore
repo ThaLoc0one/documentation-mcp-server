@@ -1,0 +1,29 @@
+# Tests
+test-*.js
+test-*.cjs
+test-php-project/
+test-mixed-project/
+test-go-project/
+test-python-project/
+sales-docs-output/
+
+# Development
+*.log
+.DS_Store
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# TypeScript source
+src/
+
+# Documentation
+docs/
+RELEASE.md
+
+# Build artifacts
+*.tsbuildinfo
+
+# OS
+Thumbs.db

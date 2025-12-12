@@ -1,0 +1,1100 @@
+openapi: 3.0.0
+info:
+  title: PHP Framework API Documentation
+  version: 1.0.0
+  description: Auto-generated API documentation from CodeIgniter, Laravel, and Symfony controllers
+paths:
+  /user:
+    get:
+      summary: UserController.index
+      description: "Route: /user"
+      operationId: UserController_index
+      tags:
+        - UserController
+      parameters: []
+      responses:
+        200:
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        500:
+          description: Internal server error
+  /user/show/id:
+    get:
+      summary: UserController.show
+      description: "Route: /user/show/id"
+      operationId: UserController_show
+      tags:
+        - UserController
+      parameters:
+        -
+          name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        200:
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        500:
+          description: Internal server error
+  /user/create:
+    get:
+      summary: UserController.create
+      description: "Route: /user/create"
+      operationId: UserController_create
+      tags:
+        - UserController
+      parameters: []
+      responses:
+        200:
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        500:
+          description: Internal server error
+    post:
+      summary: UserController.create
+      description: "Route: /user/create"
+      operationId: UserController_create
+      tags:
+        - UserController
+      parameters: []
+      responses:
+        200:
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        500:
+          description: Internal server error
+  /users:
+    get:
+      summary: Users.index
+      description: "Route: /users"
+      operationId: Users_index
+      tags:
+        - Users
+      parameters: []
+      responses:
+        200:
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        500:
+          description: Internal server error
+  /apiproduct:
+    get:
+      summary: ApiProductController.index
+      description: "Route: /apiproduct"
+      operationId: ApiProductController_index
+      tags:
+        - ApiProductController
+      parameters: []
+      responses:
+        200:
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        500:
+          description: Internal server error
+  /apiproduct/show/id:
+    get:
+      summary: ApiProductController.show
+      description: "Route: /apiproduct/show/id"
+      operationId: ApiProductController_show
+      tags:
+        - ApiProductController
+      parameters:
+        -
+          name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        200:
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        500:
+          description: Internal server error
+  /apiproduct/store/request:
+    post:
+      summary: ApiProductController.store
+      description: "Route: /apiproduct/store/request"
+      operationId: ApiProductController_store
+      tags:
+        - ApiProductController
+      parameters:
+        -
+          name: request
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        200:
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        500:
+          description: Internal server error
+  /apiproduct/update/request/id:
+    put:
+      summary: ApiProductController.update
+      description: "Route: /apiproduct/update/request/id"
+      operationId: ApiProductController_update
+      tags:
+        - ApiProductController
+      parameters:
+        -
+          name: request
+          in: path
+          required: true
+          schema:
+            type: string
+        -
+          name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        200:
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        500:
+          description: Internal server error
+  /apiproduct/destroy/id:
+    delete:
+      summary: ApiProductController.destroy
+      description: "Route: /apiproduct/destroy/id"
+      operationId: ApiProductController_destroy
+      tags:
+        - ApiProductController
+      parameters:
+        -
+          name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        200:
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        500:
+          description: Internal server error
+  /webproduct:
+    get:
+      summary: WebProductController.index
+      description: "Route: /webproduct"
+      operationId: WebProductController_index
+      tags:
+        - WebProductController
+      parameters: []
+      responses:
+        200:
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        500:
+          description: Internal server error
+  /webproduct/show/{id}:
+    get:
+      summary: WebProductController.show
+      description: "Route: /webproduct/show/{id}"
+      operationId: WebProductController_show
+      tags:
+        - WebProductController
+      parameters:
+        -
+          name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        200:
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        500:
+          description: Internal server error
+  /webproduct/create:
+    get:
+      summary: WebProductController.create
+      description: "Route: /webproduct/create"
+      operationId: WebProductController_create
+      tags:
+        - WebProductController
+      parameters: []
+      responses:
+        200:
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        500:
+          description: Internal server error
+    post:
+      summary: WebProductController.create
+      description: "Route: /webproduct/create"
+      operationId: WebProductController_create
+      tags:
+        - WebProductController
+      parameters: []
+      responses:
+        200:
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        500:
+          description: Internal server error
+  /webproduct/store:
+    get:
+      summary: WebProductController.store
+      description: "Route: /webproduct/store"
+      operationId: WebProductController_store
+      tags:
+        - WebProductController
+      parameters: []
+      responses:
+        200:
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        500:
+          description: Internal server error
+    post:
+      summary: WebProductController.store
+      description: "Route: /webproduct/store"
+      operationId: WebProductController_store
+      tags:
+        - WebProductController
+      parameters: []
+      responses:
+        200:
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        500:
+          description: Internal server error
+  /webproduct/edit/{id}:
+    get:
+      summary: WebProductController.edit
+      description: "Route: /webproduct/edit/{id}"
+      operationId: WebProductController_edit
+      tags:
+        - WebProductController
+      parameters:
+        -
+          name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        200:
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        500:
+          description: Internal server error
+    post:
+      summary: WebProductController.edit
+      description: "Route: /webproduct/edit/{id}"
+      operationId: WebProductController_edit
+      tags:
+        - WebProductController
+      parameters:
+        -
+          name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        200:
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        500:
+          description: Internal server error
+    put:
+      summary: WebProductController.edit
+      description: "Route: /webproduct/edit/{id}"
+      operationId: WebProductController_edit
+      tags:
+        - WebProductController
+      parameters:
+        -
+          name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        200:
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        500:
+          description: Internal server error
+    patch:
+      summary: WebProductController.edit
+      description: "Route: /webproduct/edit/{id}"
+      operationId: WebProductController_edit
+      tags:
+        - WebProductController
+      parameters:
+        -
+          name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        200:
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        500:
+          description: Internal server error
+  /webproduct/update/{id}:
+    get:
+      summary: WebProductController.update
+      description: "Route: /webproduct/update/{id}"
+      operationId: WebProductController_update
+      tags:
+        - WebProductController
+      parameters:
+        -
+          name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        200:
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        500:
+          description: Internal server error
+    post:
+      summary: WebProductController.update
+      description: "Route: /webproduct/update/{id}"
+      operationId: WebProductController_update
+      tags:
+        - WebProductController
+      parameters:
+        -
+          name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        200:
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        500:
+          description: Internal server error
+    put:
+      summary: WebProductController.update
+      description: "Route: /webproduct/update/{id}"
+      operationId: WebProductController_update
+      tags:
+        - WebProductController
+      parameters:
+        -
+          name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        200:
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        500:
+          description: Internal server error
+    patch:
+      summary: WebProductController.update
+      description: "Route: /webproduct/update/{id}"
+      operationId: WebProductController_update
+      tags:
+        - WebProductController
+      parameters:
+        -
+          name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        200:
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        500:
+          description: Internal server error
+  /webproduct/destroy/{id}:
+    delete:
+      summary: WebProductController.destroy
+      description: "Route: /webproduct/destroy/{id}"
+      operationId: WebProductController_destroy
+      tags:
+        - WebProductController
+      parameters:
+        -
+          name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        200:
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        500:
+          description: Internal server error
+    post:
+      summary: WebProductController.destroy
+      description: "Route: /webproduct/destroy/{id}"
+      operationId: WebProductController_destroy
+      tags:
+        - WebProductController
+      parameters:
+        -
+          name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        200:
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        500:
+          description: Internal server error
+  /admin:
+    get:
+      summary: AdminController.index
+      description: "Route: /admin"
+      operationId: AdminController_index
+      tags:
+        - AdminController
+      parameters: []
+      responses:
+        200:
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        500:
+          description: Internal server error
+      security:
+        -
+          auth: []
+        -
+          admin: []
+  /admin/users:
+    get:
+      summary: AdminController.users
+      description: "Route: /admin/users"
+      operationId: AdminController_users
+      tags:
+        - AdminController
+      parameters: []
+      responses:
+        200:
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        500:
+          description: Internal server error
+      security:
+        -
+          auth: []
+        -
+          admin: []
+        -
+          throttle:60,1: []
+  /admin/deleteall:
+    get:
+      summary: AdminController.deleteAll
+      description: "Route: /admin/deleteall"
+      operationId: AdminController_deleteAll
+      tags:
+        - AdminController
+      parameters: []
+      responses:
+        200:
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        500:
+          description: Internal server error
+      security:
+        -
+          auth: []
+        -
+          admin: []
+        -
+          verified: []
+        -
+          signed: []
+  /apisecure/info:
+    get:
+      summary: ApiSecureController.info
+      description: "Route: /apisecure/info"
+      operationId: ApiSecureController_info
+      tags:
+        - ApiSecureController
+      parameters: []
+      responses:
+        200:
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        500:
+          description: Internal server error
+      security:
+        -
+          isGranted:
+            - ROLE_API_USER
+  /apisecure/adminstats:
+    get:
+      summary: ApiSecureController.adminStats
+      description: "Route: /apisecure/adminstats"
+      operationId: ApiSecureController_adminStats
+      tags:
+        - ApiSecureController
+      parameters: []
+      responses:
+        200:
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        500:
+          description: Internal server error
+      security:
+        -
+          isGranted:
+            - ROLE_API_USER
+        -
+          isGranted:
+            - ROLE_ADMIN
+  /cisecure:
+    get:
+      summary: CISecureController.index
+      description: "Route: /cisecure"
+      operationId: CISecureController_index
+      tags:
+        - CISecureController
+      parameters: []
+      responses:
+        200:
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        500:
+          description: Internal server error
+      security:
+        -
+          auth: []
+  /cisecure/settings:
+    get:
+      summary: CISecureController.settings
+      description: "Route: /cisecure/settings"
+      operationId: CISecureController_settings
+      tags:
+        - CISecureController
+      parameters: []
+      responses:
+        200:
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        500:
+          description: Internal server error
+      security:
+        -
+          auth: []
+        -
+          csrf: []
+  /ci3_legacy:
+    get:
+      summary: CI3_Legacy_Controller.index
+      description: "Route: /ci3_legacy"
+      operationId: CI3_Legacy_Controller_index
+      tags:
+        - CI3_Legacy_Controller
+      parameters: []
+      responses:
+        200:
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        500:
+          description: Internal server error
+      security:
+        -
+          auth: []
+        -
+          session: []
+  /ci3_legacy/admin:
+    get:
+      summary: CI3_Legacy_Controller.admin
+      description: "Route: /ci3_legacy/admin"
+      operationId: CI3_Legacy_Controller_admin
+      tags:
+        - CI3_Legacy_Controller
+      parameters: []
+      responses:
+        200:
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        500:
+          description: Internal server error
+      security:
+        -
+          auth: []
+        -
+          auth:
+            - admin
+            - verified
+        -
+          ip_whitelist: []
+  /mixed/profile:
+    get:
+      summary: MixedController.profile
+      description: "Route: /mixed/profile"
+      operationId: MixedController_profile
+      tags:
+        - MixedController
+      parameters: []
+      responses:
+        200:
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        500:
+          description: Internal server error
+      security:
+        -
+          auth: []
+  /mixed/edit:
+    get:
+      summary: MixedController.edit
+      description: "Route: /mixed/edit"
+      operationId: MixedController_edit
+      tags:
+        - MixedController
+      parameters: []
+      responses:
+        200:
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        500:
+          description: Internal server error
+      security:
+        -
+          auth: []
+        -
+          verified: []
+        -
+          throttle:10:
+            - 1
+    post:
+      summary: MixedController.edit
+      description: "Route: /mixed/edit"
+      operationId: MixedController_edit
+      tags:
+        - MixedController
+      parameters: []
+      responses:
+        200:
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        500:
+          description: Internal server error
+      security:
+        -
+          auth: []
+        -
+          verified: []
+        -
+          throttle:10:
+            - 1
+    put:
+      summary: MixedController.edit
+      description: "Route: /mixed/edit"
+      operationId: MixedController_edit
+      tags:
+        - MixedController
+      parameters: []
+      responses:
+        200:
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        500:
+          description: Internal server error
+      security:
+        -
+          auth: []
+        -
+          verified: []
+        -
+          throttle:10:
+            - 1
+    patch:
+      summary: MixedController.edit
+      description: "Route: /mixed/edit"
+      operationId: MixedController_edit
+      tags:
+        - MixedController
+      parameters: []
+      responses:
+        200:
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        500:
+          description: Internal server error
+      security:
+        -
+          auth: []
+        -
+          verified: []
+        -
+          throttle:10:
+            - 1
+  /mixed/billing:
+    get:
+      summary: MixedController.billing
+      description: "Route: /mixed/billing"
+      operationId: MixedController_billing
+      tags:
+        - MixedController
+      parameters: []
+      responses:
+        200:
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        500:
+          description: Internal server error
+      security:
+        -
+          auth: []
+        -
+          stripe: []
+        -
+          billing: []
+        -
+          subscription: []
+components:
+  securitySchemes:
+    auth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+    admin:
+      type: apiKey
+      in: header
+      name: X-Admin
+    verified:
+      type: apiKey
+      in: header
+      name: X-Verified
+    signed:
+      type: apiKey
+      in: header
+      name: X-Signed
+    isGranted:
+      type: apiKey
+      in: header
+      name: X-IsGranted
+    session:
+      type: apiKey
+      in: header
+      name: X-Session
+    ip_whitelist:
+      type: apiKey
+      in: header
+      name: X-Ip_whitelist
+    stripe:
+      type: apiKey
+      in: header
+      name: X-Stripe
+    billing:
+      type: apiKey
+      in: header
+      name: X-Billing
+    subscription:
+      type: apiKey
+      in: header
+      name: X-Subscription
+servers:
+  -
+    url: "https://api.example.com/v1"
+    description: API Server

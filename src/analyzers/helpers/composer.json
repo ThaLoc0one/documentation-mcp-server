@@ -1,0 +1,17 @@
+{
+    "name": "documentation-mcp/php-analyzer",
+    "description": "PHP analyzer helper with nikic/php-parser",
+    "type": "library",
+    "require": {
+        "php": ">=7.4",
+        "nikic/php-parser": "^5.3"
+    },
+    "autoload": {
+        "psr-4": {
+            "DocumentationMcp\\PhpAnalyzer\\": "."
+        }
+    },
+    "config": {
+        "optimize-autoloader": true
+    }
+}
